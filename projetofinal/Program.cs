@@ -159,7 +159,7 @@ namespace projetoFinal
 
                     if (erros == 6)
                     {
-                        Console.WriteLine("VOCE FOI ENCOFORCADO!!");
+                        Console.WriteLine("VOCE FOI ENFORCADO!!");
                     }
                     else if (verificar == resultado.Length)
                     {
