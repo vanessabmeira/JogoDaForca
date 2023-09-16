@@ -23,18 +23,15 @@ namespace projetoFinal
 
         
             int erros = 0, acertos = 0, verificar = 0;
-            Console.Clear(); // Limpa o console
+            Console.Clear(); 
 
             Console.WriteLine("Digite uma letra para tentar formar a palavra.");
-
-            //Enquanto erro for diferente de 6 & o verificar for diferentedo tamanho do vetor resultado
-            //vou pegar a letra que foi digitada
             
             while (erros != 6 && verificar != resultado.Length)
             {
                 try
                 {
-                    char letra = char.Parse(Console.ReadLine()); // pega a letra que foi digitada
+                    char letra = char.Parse(Console.ReadLine());
                     if (!Char.IsLetter(letra))
                     {
                         Console.WriteLine("Favor digitar uma letra válida");
@@ -42,18 +39,18 @@ namespace projetoFinal
 
                     }
                     letra = Char.ToLower(letra);
-                    int ocorrencias = palavraForca.IndexOf(letra); //verifica se a letra tem ocorrencia na String (palavraForca)
+                    int ocorrencias = palavraForca.IndexOf(letra);
                     int chances = 0;
                     if (ocorrencias == -1)
                     {
-                        Console.Clear(); // Limpa o console
+                        Console.Clear(); 
                         erros++;
                         chances = 6 - erros;
                         Console.WriteLine($"Esta letra NÃO existe na palavra tente novamente! {chances} chances restantes.");
                     }
                     else
                     {
-                        Console.Clear(); // Limpa o console
+                        Console.Clear(); 
                         chances = 6 - erros;
                         Console.WriteLine($"Você acertou! {chances} chances restantes."); 
 
@@ -63,12 +60,12 @@ namespace projetoFinal
                         {
                             if (palavraForca[i].ToString() == letra.ToString())
                             {
-                                resultado[i] = letra.ToString(); // vai preencher no vetor
+                                resultado[i] = letra.ToString(); 
 
 
                                 if (resultado[i] != null && resultado[i] != "_")
                                 {
-                                    verificar++; //incrementa a variavel  verificar  indicando que tem uma letra na posicao
+                                    verificar++; 
                                 }
 
                             }
@@ -97,7 +94,7 @@ namespace projetoFinal
                             Console.WriteLine("|     ");
                             Console.WriteLine("|     ");
                             Console.WriteLine("|     ");
-                            Console.WriteLine("|       ");
+                            Console.WriteLine("|     ");
 
 
                             break;
@@ -108,7 +105,7 @@ namespace projetoFinal
                             Console.WriteLine("|    O ");
                             Console.WriteLine("|     ");
                             Console.WriteLine("|     ");
-                            Console.WriteLine("|       ");
+                            Console.WriteLine("|     ");
 
 
                             break;
@@ -118,7 +115,7 @@ namespace projetoFinal
                             Console.WriteLine("|    |");
                             Console.WriteLine("|    O ");
                             Console.WriteLine("|    | ");
-                            Console.WriteLine("|     ");
+                            Console.WriteLine("|       ");
                             Console.WriteLine("|       ");
 
                             break;
@@ -127,7 +124,7 @@ namespace projetoFinal
                             Console.WriteLine("|    |");
                             Console.WriteLine("|    O ");
                             Console.WriteLine("|    |- ");
-                            Console.WriteLine("|     ");
+                            Console.WriteLine("|       ");
                             Console.WriteLine("|       ");
                             break;
                         case 4:
@@ -135,7 +132,7 @@ namespace projetoFinal
                             Console.WriteLine("|    |");
                             Console.WriteLine("|    O ");
                             Console.WriteLine("|   -|- ");
-                            Console.WriteLine("|     ");
+                            Console.WriteLine("|       ");
                             Console.WriteLine("|       ");
                             break;
                         case 5:
@@ -163,7 +160,7 @@ namespace projetoFinal
                     }
                     else if (verificar == resultado.Length)
                     {
-                        Console.WriteLine("VOCE GANHOU !!");
+                        Console.WriteLine("PARABÉNS, VOCE GANHOU !!");
                     }
                     else
                     {
@@ -172,35 +169,11 @@ namespace projetoFinal
                 }
                 catch (FormatException f)
                 {
-                    Console.WriteLine("Por favor insira apenas uma letra");
+                    Console.WriteLine("Por favor insira apenas uma letra de cada vez");
                 }
             }
-
-
-
-
-
-
-
-
         }
     }
 }
 
-//catch (FormatException)
-//                {
-//Console.WriteLine("Voce digitou 2 letras");
-//}
-
-
-
-//Console.WriteLine(" ____ ");
-//Console.WriteLine("|    |");
-//Console.WriteLine("|      ");
-//Console.WriteLine("|      ");
-//Console.WriteLine("|      ");
-//Console.WriteLine("|      ");
-
-//int chances = erros - 5;
-//Console.WriteLine("Esta letra n'ao existe na palavra tente novamente,voce tem" + chances);
 
